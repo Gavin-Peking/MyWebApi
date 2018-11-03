@@ -8,6 +8,7 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [WebApiExceptionFilter]
     public class ValuesController : ControllerBase
     {
         // GET api/values
@@ -21,8 +22,10 @@ namespace WebApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return $"value:{id}";
+            throw new NotImplementedException();
+            //return $"value:{id}";
         }
+
 
         // POST api/values
         [HttpPost]
